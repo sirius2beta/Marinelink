@@ -1,2 +1,2 @@
-# Marine Navigation System
+# Marine Navigation System v1.0
 
