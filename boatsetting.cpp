@@ -440,7 +440,7 @@ void BoatSetting::onBoatNameChange()
         settings->setArrayIndex(i);
         ;
         if(settings->value("name").toString() == oldname){
-            settings->setValue("boatname",newname);
+            settings->setValue("name",newname);
             index = i;
             boatList->getBoatbyIndex(i)->name = newname;
             break;
@@ -483,7 +483,7 @@ void BoatSetting::onAddBoat()
     settings->endArray();
     settings->beginWriteArray("boat");
     settings->setArrayIndex(size);
-    settings->setValue(QString("boatname"), newboatname);
+    settings->setValue(QString("name"), newboatname);
     settings->setValue(QString("ID"), index);
     settings->setValue(QString("PIP"), "192.168.0.1");
     settings->setValue(QString("SIP"), "100.100.100.100");
@@ -526,7 +526,7 @@ void BoatSetting::onDeleteBoat()
 
 
         settings->setArrayIndex(i);
-        settings->setValue("boatname",lastname);
+        settings->setValue("name",lastname);
         settings->setValue("PIP", lastPIP);
         settings->setValue("SIP", lastSIP);
         settings->setValue("ID", lastID);
