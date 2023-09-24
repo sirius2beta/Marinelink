@@ -73,31 +73,38 @@ FORMS += \
 
 
 
-INCLUDEPATH += "source"
-INCLUDEPATH += "presentation\common\gui_style"
-INCLUDEPATH += "presentation\widgets"
-INCLUDEPATH += "resource\icon"
-INCLUDEPATH += "source\dto"
+INCLUDEPATH += "$$PWD/source"
+INCLUDEPATH += "$$PWD/presentation/common/gui_style"
+INCLUDEPATH += "$$PWD/presentation/widgets"
+INCLUDEPATH += "$$PWD/resource/icon"
+INCLUDEPATH += "$$PWD/source/dto"
 
-INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\include"
-INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\include\gstreamer-1.0"
-INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\include\glib-2.0"
-INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\lib\glib-2.0\include"
-INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\lib\gstreamer-1.0\include"
+win32{
+    INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\include"
+    INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\include\gstreamer-1.0"
+    INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\include\glib-2.0"
+    INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\lib\glib-2.0\include"
+    INCLUDEPATH += "C:\gstreamer_MSVC\1.0\msvc_x86_64\lib\gstreamer-1.0\include"
 
-CONFIG += link_pkgconfig
-PKGCONFIG += gstreamer-1.0
 
-LIBS += -LC:\gstreamer_MSVC\1.0\msvc_x86_64/lib/ -lgstvideo-1.0
+    CONFIG += link_pkgconfig
+    PKGCONFIG += gstreamer-1.0
 
-with_cuda{
-    #INCLUDEPATH += "C:\opencv-4.6\build_with_cuda\install\include"
-    #LIBS += -LC:/opencv-4.6/build_with_cuda/install/x64/lib\ -lopencv_world460
-} else{
-    #INCLUDEPATH += "C:\opencv_MSVC_no_cuda\include"
-    #LIBS += -LC:/opencv_MSVC_no_cuda/x64/lib\ -lopencv_world460
+    LIBS += -LC:\gstreamer_MSVC\1.0\msvc_x86_64/lib/ -lgstvideo-1.0
+    LIBS += -LC:/Qt/5.15.2/msvc2019_64/lib/ -lQt5Mqtt
 }
 
+unix{
+        macx {
+            CONFIG += link_pkgconfig
+            PKGCONFIG += gstreamer-1.0
+            INCLUDEPATH += /Library/Frameworks/GStreamer.framework/Versions/1.0/Headers
+            LIBS += -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0 -lgstvideo-1.0
+        }
+         else {
+                # Linux definitions go here ...
+        }
+}
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -105,9 +112,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    resource\image.qrc
+    $$PWD/resource/image.qrc
 
 DISTFILES += \
-    resource\logo.rc
+    $$PWDresource/logo.rc
 RC_FILE += \
-    resource\logo.rc
+    $$PWD/resource/logo.rc
