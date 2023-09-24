@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>NetworkSettings</class>
  <widget class="QWidget" name="NetworkSettings">
@@ -42,13 +42,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-<<<<<<< HEAD
         <width>350</width>
-        <height>140</height>
-=======
-        <width>367</width>
-        <height>137</height>
->>>>>>> 2e1a753571c45fbf4504ae88d22a26cf756b4118
+        <height>156</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -68,11 +63,7 @@
          </property>
          <property name="font">
           <font>
-<<<<<<< HEAD
-           <pointsize>6</pointsize>
-=======
-           <family>Arial</family>
->>>>>>> 2e1a753571c45fbf4504ae88d22a26cf756b4118
+           <pointsize>9</pointsize>
           </font>
          </property>
          <property name="title">

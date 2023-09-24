@@ -48,11 +48,8 @@ int main(int argc, char *argv[])
     guiStyleManager.setPaletteStyle(presentation::GuiStyleManager::Night);
     a.setPalette(guiStyleManager.getPallete());
     a.setFont(QFont("Microsoft JhengHei UI", 9, QFont::Normal));
-<<<<<<< HEAD
     a.setStyleSheet("QDockWidget::title { background-color:#202020; };");
-=======
-    a.setStyleSheet("QDockWidget::title { background-color:#202020; }");
->>>>>>> 2e1a753571c45fbf4504ae88d22a26cf756b4118
+
 
     //create splash screen
     QPixmap pixmap(":/splash/icon/mssplash.png");
