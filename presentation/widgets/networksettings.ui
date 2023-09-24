@@ -43,7 +43,7 @@
         <x>0</x>
         <y>0</y>
         <width>350</width>
-        <height>156</height>
+        <height>140</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -60,6 +60,11 @@
            <width>0</width>
            <height>0</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>6</pointsize>
+          </font>
          </property>
          <property name="title">
           <string>PC IP</string>

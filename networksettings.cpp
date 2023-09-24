@@ -7,9 +7,6 @@ NetworkSettings::NetworkSettings(QWidget *parent) :
     config('1')
 {
     ui->setupUi(this);
-
-    //QCoreApplication::setOrganizationName("Ezosirius");
-    //QCoreApplication::setApplicationName("GPlayer_v1");
     settings = new QSettings(this);
 
     connect(ui->p_pc_ip_edit, &QLineEdit::editingFinished, this, &NetworkSettings::onPCPIPChanged);
