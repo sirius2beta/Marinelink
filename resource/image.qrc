@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/splash">
+        <file>icon/mssplash.png</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>icon/boat-06.png</file>
+        <file>icon/COAST_logo.png</file>
+        <file>icon/COAST_logo-02.png</file>
+        <file>icon/control-03.png</file>
+        <file>icon/GP_logo-04.png</file>
+        <file>icon/PC-05.png</file>
+        <file>icon/playbutton.png</file>
+        <file>icon/sensor-02.png</file>
+        <file>icon/settingbutton-02.png</file>
+        <file>icon/stopbutton.png</file>
+        <file>icon/view-07.png</file>
+    </qresource>
+</RCC>
